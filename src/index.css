@@ -41,7 +41,7 @@ a {
 }
 
 .section {
-  padding: 96px 0;
+  /* padding: 96px 0; */
 }
 
 .bg-aurora {
@@ -120,8 +120,8 @@ a {
 .skill-typer {
   display: inline-block;
   max-height: 1.5em;
-  width: 26ch;
-  white-space: nowrap;
+  width: min(26ch, 100%);
+  max-width: 100%;
 }
 
 @keyframes floaty {

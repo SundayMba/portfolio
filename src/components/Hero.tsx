@@ -17,7 +17,10 @@ const stagger = {
 
 function Hero() {
   return (
-    <section id="overview" className="section relative overflow-hidden">
+    <section
+      id="overview"
+      className="relative overflow-hidden pt-10 pb-20 sm:pb-24 lg:pt-5 lg:pb-28"
+    >
       <div className="absolute inset-0 bg-grid opacity-60" />
       <motion.div
         className="absolute -right-10 top-10 h-52 w-52 rounded-full bg-cyan-400/20 blur-3xl floating-orb"
@@ -31,8 +34,13 @@ function Hero() {
       />
 
       <div className="relative mx-auto w-full max-w-6xl px-6">
-        <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
-          <motion.div initial="hidden" animate="visible" variants={stagger}>
+        <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={stagger}
+            className="relative z-10"
+          >
             <motion.p
               variants={fadeUp}
               className="text-sm uppercase tracking-[0.35em] text-slate-400"
@@ -41,13 +49,13 @@ function Hero() {
             </motion.p>
             <motion.h1
               variants={fadeUp}
-              className="mt-6 font-display text-4xl leading-tight text-white md:text-6xl"
+              className="mt-6 font-display text-3xl leading-tight text-white sm:text-4xl md:text-6xl"
             >
               Building modern digital products that feel effortless.
             </motion.h1>
             <motion.p
               variants={fadeUp}
-              className="mt-6 max-w-2xl text-lg text-slate-300"
+              className="mt-6 max-w-2xl text-base text-slate-300 sm:text-lg"
             >
               I design and engineer end-to-end experiences, from pixel-perfect
               interfaces to resilient cloud infrastructure. Focused on scalable
@@ -60,7 +68,7 @@ function Hero() {
               <p className="text-xs uppercase tracking-[0.3em] text-slate-400">
                 Tech skills include
               </p>
-              <p className="mt-3 text-lg text-emerald-200">
+              <p className="mt-3 text-base text-emerald-200 sm:text-lg">
                 <SkillTyper
                   skills={[
                     'React',
@@ -114,19 +122,25 @@ function Hero() {
               </a>
             </motion.div>
           </motion.div>
-          <div className="absolute -inset-6 rounded-full bg-transparent" />
-          <div className="ring-animated relative h-[380px] w-[380px] rounded-full p-[6px]">
-            <div className="flex h-full w-full items-center justify-center rounded-full p-4">
-              <div>
-                <img
-                  src={profilePhoto}
-                  alt="Portrait of Sunday Mba"
-                  className="object-contain"
-                  loading="lazy"
-                />
+          <motion.div
+            className="relative z-0 order-last mt-8 flex items-center justify-center lg:order-none lg:mt-0 lg:justify-end"
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <div className="ring-animated relative rounded-full p-[6px]">
+              <div className="flex h-full w-full items-center justify-center rounded-full p-4">
+                <div className="h-full w-full">
+                  <img
+                    src={profilePhoto}
+                    alt="Portrait of Sunday Mba"
+                    className="h-full w-full object-contain"
+                    loading="lazy"
+                  />
+                </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
