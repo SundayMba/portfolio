@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import profilePhoto from '../assets/photo.jpeg';
+import profilePhoto from '../assets/photo.png';
 import SkillTyper from './SkillTyper';
 
 const fadeUp = {
