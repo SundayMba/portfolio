@@ -19,7 +19,7 @@ function Hero() {
   return (
     <section
       id="overview"
-      className="relative overflow-hidden pt-10 pb-20 sm:pb-24 lg:pt-5 lg:pb-28"
+      className="relative overflow-hidden pt-20 pb-20 sm:pb-24 lg:pt-5 lg:pb-28"
     >
       <div className="absolute inset-0 bg-grid opacity-60" />
       <motion.div
