@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import { skills } from '../data/portfolio'
 import SectionHeader from './SectionHeader'
 
@@ -16,15 +16,17 @@ const stagger = {
 }
 
 function SkillsSection() {
+  const reduceMotion = useReducedMotion()
+
   return (
     <section id="skills" className="section">
       <div className="mx-auto w-full max-w-6xl px-6">
         <motion.div
           className="grid gap-10"
           variants={stagger}
-          initial="hidden"
+          initial={reduceMotion ? 'visible' : 'hidden'}
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.15 }}
         >
           <SectionHeader
             label="Skills & Tools"
