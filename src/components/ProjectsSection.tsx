@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { complexityRank, projects } from '../data/portfolio';
 import ProjectCard from './ProjectCard';
 import SectionHeader from './SectionHeader';
@@ -16,12 +16,17 @@ const projectsSorted = [...projects].sort(
 );
 
 function ProjectsSection() {
-  // const reduceMotion = useReducedMotion()
+  const reduceMotion = useReducedMotion();
 
   return (
     <section id="projects" className="section">
       <div className="mx-auto w-full max-w-6xl px-6">
-        <motion.div variants={stagger} initial="visible" animate="visible">
+        <motion.div
+          variants={stagger}
+          initial={reduceMotion ? 'visible' : 'hidden'}
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+        >
           <SectionHeader
             label="Project Vault"
             title="Ranked by complexity and impact."
