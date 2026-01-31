@@ -1,73 +1,51 @@
-# React + TypeScript + Vite
+# Sunday Mba — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern single‑page portfolio built with React, TypeScript, Tailwind CSS, and Framer Motion. It showcases my skills, ranked projects, and DevOps work, with smooth interactions and a mobile‑friendly layout.
 
-Currently, two official plugins are available:
+## Highlights
+- Single‑page experience with sections for Overview, Skills, Projects, DevOps, and Contact
+- Dedicated pages for About and Book a Call
+- Animated hero, glowing borders, and subtle motion effects
+- Project list ranked by complexity
+- Mobile drawer navigation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
+- React + TypeScript + Vite
+- Tailwind CSS
+- Framer Motion
+- React Router
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Getting Started
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Build
+```bash
+npm run build
+npm run preview
 ```
+
+## Customize
+- Update content in `src/data/portfolio.ts`
+- Update hero copy and skills list in `src/components/Hero.tsx`
+- Replace the portrait image in `src/assets/photo.png`
+- Edit global styles in `src/index.css`
+
+## Deploy
+Optimized for Vercel deployment.
+
+## Folder Structure
+```text
+src/
+  components/   UI sections and shared components
+  pages/        Page layouts (Home, About, Book)
+  data/         Portfolio content
+  assets/       Images
+```
+
+## Notes
+- If you replace the portrait image, keep the filename or update the import in `src/components/Hero.tsx`.
+- Motion can be reduced for accessibility by OS preferences.
+
